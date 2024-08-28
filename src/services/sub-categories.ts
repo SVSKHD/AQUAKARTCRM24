@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BASE = NEXT_PUBLIC_API_URL
+const BASE = process.env.NEXT_PUBLIC_API_URL
 
-const getSubCategories = () =>axios.get(`${BASE}/v1/all-subcategories`)
+const getSubCategories = () =>axios.get(`${BASE}/all-subcategories`)
 const SubCategoryOperations = {
 getSubCategories
 }
