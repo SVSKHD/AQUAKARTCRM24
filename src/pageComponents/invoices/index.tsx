@@ -1,12 +1,12 @@
 import AquaCrmLayout from "@/components/layout/layout"
 
-const AquaInvoices = () =>{
+const AquaInvoicesComponent = () =>{
 return(
     <>
     <AquaCrmLayout>
-        
+        <h1>Invoices</h1>
     </AquaCrmLayout>
     </>
 )
 }
-export default AquaInvoices
+export default AquaInvoicesComponent

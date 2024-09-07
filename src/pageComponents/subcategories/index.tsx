@@ -5,9 +5,9 @@ import { useEffect, useState } from "react"
 
 const AquaSubCategoriesComponent = () => {
   const [categories, setCategories] = useState([])
+  const [edit, setEdit] = useState(false)
 useEffect(()=>{
   SubCategoryOperations.getSubCategories().then((res)=>{
-    console.log(res.data.data)
     setCategories(res.data.data)
   })
 },[])

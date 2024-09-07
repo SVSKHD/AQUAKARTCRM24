@@ -15,8 +15,9 @@ import Image from "next/image"; // For Next.js optimized image handling
 import AQWhite from "@/assests/logo-white.png"; // Adjusted import path for Next.js
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
+  { name: "Categories", href: "#", icon: HomeIcon, current: true },
+  { name: "Sub-Categories", href: "#", icon: UsersIcon, current: false },
+  { name: "Products", href: "#", icon: UsersIcon, current: false },
 ];
 
 const offline = [
@@ -103,6 +104,7 @@ const AquaCrmLayout = (props) => {
             <Image src={AQWhite} alt="Your Company" className="h-8 w-auto" />
           </div>
           <nav className="flex flex-1 flex-col">
+            <h4 className="text-white font-bold">Online Menu</h4>
             <ul className="flex flex-1 flex-col gap-y-7">
               <li>
                 <ul className="-mx-2 space-y-1">
@@ -128,27 +130,16 @@ const AquaCrmLayout = (props) => {
                 </ul>
               </li>
 
-              {/* Online Menu */}
+              <h4 className="text-white font-bold">Offline Menu</h4>
              
 
-              {/* Offline Menu */}
+              
              
 
-              <li className="-mx-6 mt-auto">
-                <a
-                  href="#"
-                  className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800"
-                >
-                  <img
-                    className="h-8 w-8 rounded-full bg-gray-800"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                  <span>Tom Cook</span>
-                </a>
-              </li>
+            
             </ul>
           </nav>
+          
         </div>
       </div>
 
