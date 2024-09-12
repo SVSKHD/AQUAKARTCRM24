@@ -2,32 +2,23 @@ import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  CalendarIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
   UsersIcon,
   XMarkIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image"; // For Next.js optimized image handling
 import AQWhite from "@/assests/logo-white.png"; // Adjusted import path for Next.js
 
 const navigation = [
-  { name: "Categories", href: "#", icon: HomeIcon, current: true },
-  { name: "Sub-Categories", href: "#", icon: UsersIcon, current: false },
-  { name: "Products", href: "#", icon: UsersIcon, current: false },
+  { name: "Categories", href: "/category", icon: HomeIcon, current: true },
+  { name: "Sub-Categories", href: "/sub-category", icon: UsersIcon, current: false },
+  { name: "Products", href: "/products", icon: UsersIcon, current: false },
 ];
 
-const offline = [
-  { name: "categories", link:"/categories" },
-  { name: "Subcategories", link:"/sub-categories" },
+const OfflineNavigation = [
+  { name: "Invoices", href: "/invoices", icon: HomeIcon, current: true },
 ];
 
-const online = [
-  { name: "invoices", link:"/invoices" },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -131,7 +122,29 @@ const AquaCrmLayout = (props) => {
               </li>
 
               <h4 className="text-white font-bold">Offline Menu</h4>
-             
+              <li>
+                <ul className="-mx-2 space-y-1">
+                  {OfflineNavigation.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-400 hover:bg-gray-800 hover:text-white",
+                          "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
+                        )}
+                      >
+                        <item.icon
+                          className="h-6 w-6 shrink-0"
+                          aria-hidden="true"
+                        />
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
 
               
              
